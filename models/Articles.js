@@ -3,7 +3,7 @@ var  mongoose  = require("mongoose");
 var Schema = mongoose.Schema;
 
 var ArticleSchema = new Schema({
-    title:{
+    title: {
         type: String,
         required: true
     },
@@ -14,7 +14,15 @@ var ArticleSchema = new Schema({
     note: {
         type: Schema.Types.ObjectId,
         ref: "Note"
-    }
+    },
+    saved: {
+        type: Boolean,
+        default: false,
+    },
+    summary: {
+        type: String,
+        required: true,
+    },
 });
 
 var Article = mongoose.model("Article", ArticleSchema);

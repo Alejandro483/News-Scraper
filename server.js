@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: true}));
 app.use(express.json());
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://localhost", {useNewUrlParser: true });
+mongoose.connect("mongodb://localhost/dbArticles", {useNewUrlParser: true });
 
 app.get("/scrape", function(req, res){
     axios.get("https://www.edutopia.org/").then(function(response){
